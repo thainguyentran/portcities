@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="warehouse_form_view" model="ir.ui.view">
+            <field name="name">warehouse.form.view</field>
+            <field name="model">pcs.warehouse</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="warehouses">
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="address" />
+                        </group>
+                        <group>
+                            <field name="location" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_tree_view" model="ir.ui.view">
+            <field name="name">warehouse.tree.view</field>
+            <field name="model">pcs.warehouse</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="location" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="pcs_warehouse_action" model="ir.actions.act_window">
+            <field name="name">warehouse</field>
+            <field name="res_model">pcs.warehouse</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

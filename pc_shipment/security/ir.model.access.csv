@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pcs_warehouse_type_full,Full access on Warehouse,model_pcs_warehouse,,1,1,1,1
+access_pcs_location_type_full,Full access on Location,model_pcs_warehouse_location,,1,1,1,1
+access_pcs_product_type_full,Full access on Product,model_pcs_product,,1,1,1,1
+access_pcs_product_move_type_full,Full access on Product Move,model_pcs_product_move,,1,1,1,1
+access_pcs_delivery_request_type_full,Full access on Delivery Request,model_pcs_delivery_request,,1,1,1,1
+access_pcs_delivery_details_type_full,Full access on Delivery Details,model_pcs_delivery_details,,1,1,1,1
+

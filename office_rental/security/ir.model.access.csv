@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_or_building_full,Full access on Building,model_or_building,,1,1,1,1
+access_or_building_office,Full access on Office,model_or_building_office,,1,1,1,1
+access_or_tenant_full,Full access on Tenant,model_or_tenant,,1,1,1,1
+access_or_contract_full,Full access on Contract,model_or_contract,,1,1,1,1

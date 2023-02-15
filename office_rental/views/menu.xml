@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="or_root"
+        name="Office Rentals"
+        sequence="5"
+    />
+
+    <menuitem
+        id="or_building"
+        name="Buildings"
+        parent="or_root"
+        action="or_building_action"
+        sequence="10"
+    />
+
+    <menuitem
+        id="or_contract"
+        name="Contracts"
+        parent="or_root"
+        action="or_contract_action"
+        sequence="10"
+    />
+
+    <menuitem
+        id="or_Tenant"
+        name="Tenants"
+        parent="or_root"
+        action="or_tenant_action"
+        sequence="10"
+    />
+
+</odoo>

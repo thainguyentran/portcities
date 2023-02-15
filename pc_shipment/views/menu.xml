@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="pc_menu_root"
+        name="PC Shipment"
+        sequence="6"
+    />
+    <menuitem
+        id="warehouse_root"
+        name="Warehouses"
+        parent="pc_menu_root"
+        sequence="10"
+    />
+    <menuitem
+        id="warehouse"
+        name="Warehouses"
+        parent="warehouse_root"
+        sequence="10"
+        action="pcs_warehouse_action"
+    />
+    <menuitem
+        id="location"
+        name="Locations"
+        parent="warehouse_root"
+        sequence="10"
+        action="pcs_warehouse_location_action"
+    />
+    <menuitem
+        id="product"
+        name="Products"
+        parent="pc_menu_root"
+        sequence="10"
+        action="pcs_product_action"
+    />
+    <menuitem
+        id="product_move"
+        name="Product Move"
+        parent="pc_menu_root"
+        sequence="10"
+        action="pcs_product_move_action"
+    />
+    <menuitem
+        id="delivery_request"
+        name="Delivery Requests"
+        parent="pc_menu_root"
+        sequence="10"
+        action="pcs_delivery_request_action"
+    />
+</odoo>

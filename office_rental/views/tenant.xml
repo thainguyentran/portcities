@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="tenant_form_view" model="ir.ui.view">
+        <field name="name">tenant.form.view</field>
+        <field name="model">or.tenant</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="tenants">
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <group>
+                        <field name="phone_num" />
+                    </group>
+                    <group>
+                        <field name="email" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="tenant_tree_view" model="ir.ui.view">
+        <field name="name">tenant.view.tree</field>
+        <field name="model">or.tenant</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Name"/>
+                <field name="phone_num" string="Phone Number"/>
+                <field name="email" string="Email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="or_tenant_action" model="ir.actions.act_window">
+        <field name="name">tenants</field>
+        <field name="res_model">or.tenant</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

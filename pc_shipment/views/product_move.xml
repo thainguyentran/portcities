@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="product_move_form_view" model="ir.ui.view">
+            <field name="name">product.move.form.view</field>
+            <field name="model">pcs.product.move</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="Product Moves" attrs="{'readonly':[('move_status','=','done')]}">
+                        <group>
+                            <field name="move_date" />
+                        </group>
+                        <group>
+                            <field name="product_id" />
+                        </group>
+                        <group>
+                            <field name="wh_id" />
+                        </group>
+                        <group>
+                            <field name="move_qty" />
+                        </group>
+                        <group>
+                            <field name="move_type" />
+                        </group>
+                        <group invisible="1">
+                            <field name="move_status" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_move_tree_view" model="ir.ui.view">
+            <field name="name">product.move.tree.view</field>
+            <field name="model">pcs.product.move</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="wh_id"/>
+                    <field name="move_qty"/>
+                    <field name="move_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pcs_product_move_action" model="ir.actions.act_window">
+            <field name="name">Product Move</field>
+            <field name="res_model">pcs.product.move</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

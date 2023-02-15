@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="building_form_view" model="ir.ui.view">
+        <field name="name">building.form.view</field>
+        <field name="model">or.building</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Buildings">
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <group>
+                        <field name="address" />
+                    </group>
+                    <group string="Offices">
+                        <field name="office_ids">
+                            <tree string="Offices" editable="bottom">
+                                <field name="name"/>
+                                <field name="office_status"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="building_tree_view" model="ir.ui.view">
+        <field name="name">building.view.tree</field>
+        <field name="model">or.building</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Name"/>
+                <field name="address" string="Address"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="or_building_action" model="ir.actions.act_window">
+        <field name="name">Buildings</field>
+        <field name="res_model">or.building</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

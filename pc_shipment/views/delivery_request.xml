@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="delivery_request_form_view" model="ir.ui.view">
+            <field name="name">delivery.request.form.view</field>
+            <field name="model">pcs.delivery.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button
+                        string="Complete Delivery"
+                        type="object"
+                        name="complete_delivery"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('delivery_status', '=', 'not_ready')]}"
+                    />
+                    </header>
+                    <group string="Delivery Requests">
+                        <group>
+                            <field name="name" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="request_date" />
+                        </group>
+                        <group>
+                            <field name="delivery_status" />
+                        </group>
+                        <group string="Delivery Request Details">
+                            <field name="delivery_details_ids">
+                                <tree string="Delivery Details" editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="qty_requested"/>
+                                    <field name="qty_available"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="delivery_request_tree_view" model="ir.ui.view">
+            <field name="name">delivery.request.tree.view</field>
+            <field name="model">pcs.delivery.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="request_date"/>
+                    <field name="delivery_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_delivery_request_read" model="ir.cron">
+            <field name="name">Check if the Delivery Request is ready</field>
+            <field name="model_id" ref="model_pcs_delivery_request"/>
+            <field name="state">code</field>
+            <field name="code">model.dr_ready()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+        <record id="pcs_delivery_request_action" model="ir.actions.act_window">
+            <field name="name">Delivery Request</field>
+            <field name="res_model">pcs.delivery.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
